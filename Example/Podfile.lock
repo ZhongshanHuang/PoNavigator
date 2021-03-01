@@ -1,0 +1,16 @@
+PODS:
+  - PoNavigator (1.0.0)
+
+DEPENDENCIES:
+  - PoNavigator (from `../`)
+
+EXTERNAL SOURCES:
+  PoNavigator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PoNavigator: 9237a7d3594eb8149de5eb77909d85915e3c8b0a
+
+PODFILE CHECKSUM: d409392baa02cc07ead3d78388a9f4e9332e3ad3
+
+COCOAPODS: 1.10.1

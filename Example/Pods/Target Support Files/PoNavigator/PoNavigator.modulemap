@@ -1,0 +1,6 @@
+framework module PoNavigator {
+  umbrella header "PoNavigator-umbrella.h"
+
+  export *
+  module * { export * }
+}

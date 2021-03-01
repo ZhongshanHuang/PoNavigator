@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PoNavigator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        PoNavigator.register(UserModulRouters.pattern, for: UserModulRouters.goUserScene)
+        PoNavigator.register(ProfitModulRouters.pattern, for: ProfitModulRouters.goProfitScene)
+        
+        PoNavigator.register("myapp://alert") { (forms, _) -> Bool in
+            let vc = UIAlertController(title: forms?.get("title"), message: forms?.get("message"), preferredStyle: .alert)
+            vc.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
+            PoNavigator.viewControllerForPresentFrom?.present(vc, animated: true, completion: nil)
+            return true
+        }
         return true
     }
 
